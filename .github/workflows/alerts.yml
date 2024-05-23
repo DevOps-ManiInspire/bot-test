@@ -15,6 +15,4 @@ jobs:
         id: dependabot-metadata
         uses: dependabot/fetch-metadata@v1
         with:
-          alert-lookup: true
-          compat-lookup: true
           github-token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
