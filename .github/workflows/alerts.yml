@@ -1,0 +1,19 @@
+name: Dependabot Vulnerability Notifications
+on: push
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+    steps:
+      - name: Notify Dependabot Alerts to Slack
+        uses: pwned-17/dependabot-slack@v1.6.16
+        with:
+          token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
+          slack_webhook: "${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}"
+          count: 20
+      - name: Fetch Dependabot metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v1
+        with:
+          github-token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
