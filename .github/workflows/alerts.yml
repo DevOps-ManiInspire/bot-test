@@ -19,4 +19,4 @@ jobs:
           repo: bot-test
         env:
           GITHUB_TOKEN: ${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}
-      - run: "echo latest release: '${{ steps.get_dependabot_alert.outputs}}'"
+      - run: "echo latest release: '${{ steps.get_dependabot_alert }}'"
