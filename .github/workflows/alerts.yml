@@ -4,7 +4,6 @@ on: push
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     steps:
       - name: Notify Dependabot Alerts to Slack
         uses: pwned-17/dependabot-slack@v1.6.16
