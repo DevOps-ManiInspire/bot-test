@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Notify Dependabot Alerts to Slack
-        uses: pwned-17/dependabot-slack@v1.6.16
+        uses: kunalnagarco/action-cve@v1.13.0
         with:
           token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
           slack_webhook: "${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}"
