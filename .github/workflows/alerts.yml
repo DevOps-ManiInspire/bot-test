@@ -11,12 +11,3 @@ jobs:
           token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
           slack_webhook: "${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}"
           count: 20
-      - uses: octokit/request-action@v2.x
-        id: get_dependabot_alert
-        with:
-          route: GET /repos/{owner}/{repo}/dependabot/alerts
-          owner: DevOps-ManiInspire
-          repo: bot-test
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}
-      - run: "echo latest release: '${{ steps.get_dependabot_alert.outputs.data }}'"
