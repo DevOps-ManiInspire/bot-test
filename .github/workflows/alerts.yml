@@ -17,3 +17,4 @@ jobs:
         uses: dependabot/fetch-metadata@v1
         with:
           github-token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
+ 
