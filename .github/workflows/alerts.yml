@@ -15,4 +15,3 @@ jobs:
           slack_webhook: "${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}"
           count: 100
           
-
