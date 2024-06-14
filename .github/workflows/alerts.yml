@@ -2,7 +2,7 @@ name: Dependabot Vulnerability Notifications
 on:
   pull_request:
   schedule:
-    - cron:  '*/6 * * * *'
+    - cron:  '30 18 * * 6'
 
 jobs:
   dependabot:
