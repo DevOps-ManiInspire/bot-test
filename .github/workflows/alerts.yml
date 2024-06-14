@@ -1,7 +1,7 @@
 name: Dependabot Vulnerability Notifications
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron:  '*/6 * * * *'
 
 jobs:
   dependabot:
@@ -13,4 +13,5 @@ jobs:
           token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
           slack_webhook: "${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}"
           count: 100
+          
 
