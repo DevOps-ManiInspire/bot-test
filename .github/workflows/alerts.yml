@@ -4,7 +4,6 @@ on: push
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     steps:
       - name: Notify Dependabot Alerts to Slack
         uses: kunalnagarco/action-cve@v1.13.0
@@ -12,9 +11,3 @@ jobs:
           token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
           slack_webhook: "${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}"
           count: 100
-      - name: Fetch Dependabot metadata
-        id: dependabot-metadata
-        uses: dependabot/fetch-metadata@v1
-        with:
-          github-token: "${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}"
- 
