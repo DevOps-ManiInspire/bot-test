@@ -1,5 +1,7 @@
 name: Dependabot Vulnerability Notifications
 on:
+  push:
+    branches: [ main ]
   schedule:
     - cron:  '*/6 * * * *'
 
