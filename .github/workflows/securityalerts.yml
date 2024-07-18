@@ -28,6 +28,6 @@ jobs:
           
       
       - name: Execute Python script
-        run: python dependabot.py
+        run: python .github/workflows/dependabot.py
         env:
-          WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          WEBHOOK_URL: ${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}
