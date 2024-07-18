@@ -5,7 +5,7 @@ from slack_sdk.webhook import WebhookClient
 import requests
 import pytz
 
-gitHubToken = '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'
+gitHubToken = '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'
 slackSecret = 'https://hooks.slack.com/services/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'
 channelID = '#monitoring'
 repoOwner = 'DevOps-ManiInspire'
