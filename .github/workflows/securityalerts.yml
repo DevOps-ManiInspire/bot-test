@@ -31,3 +31,4 @@ jobs:
         run: python .github/workflows/dependabot.py
         env:
           WEBHOOK_URL: ${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}
+          GITHUBTOKEN: ${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}
