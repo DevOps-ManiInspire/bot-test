@@ -4,9 +4,12 @@ from logging import info, error, getLogger
 from slack_sdk.webhook import WebhookClient
 import requests
 import pytz
+from os import environ, getenv
 
-gitHubToken = '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'
-slackSecret = 'https://hooks.slack.com/services/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'
+slackSecret = getenv('WEBHOOK_URL')
+gitHubToken = getenv('GITHUBTOKEN')
+#gitHubToken = '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'
+#slackSecret = 'https://hooks.slack.com/services/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'
 channelID = '#monitoring'
 repoOwner = 'DevOps-ManiInspire'
 repoName = 'bot-test'
