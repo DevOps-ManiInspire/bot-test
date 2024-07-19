@@ -35,7 +35,7 @@ jobs:
           REPO_NAME: 'bot-test'
           VULNERABILITY_COUNT: 2
           
-  dependabotTestRepo:
+  orgRepoRepo:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python
@@ -57,8 +57,8 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}
           GITHUB_TOKEN: ${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}
-          REPO_OWNER: 'mani1263'
-          REPO_NAME: 'dependabot-test'
+          REPO_OWNER: 'DevOps-ManiInspire'
+          REPO_NAME: 'repo'
           VULNERABILITY_COUNT: 2
 
   # Define more jobs if needed, all with 'needs: setup'
