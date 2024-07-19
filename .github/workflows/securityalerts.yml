@@ -7,6 +7,10 @@ on:
       - patch
   workflow_dispatch:  # Allow manual triggering from GitHub UI
 
+env:
+  PYTHON_VERSION: 3.10
+  DEPENDABOT_SCANNER_FILE: '.github/workflows/dependabot.py'
+
 jobs:
   botTestRepo:
     runs-on: ubuntu-latest
@@ -14,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Replace with your Python version
+          python-version: ${{ PYTHON_VERSION }} # Replace with your Python version
       
       - name: Install dependencies
         run: |
@@ -27,7 +31,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Execute Python script
-        run: python .github/workflows/dependabot.py
+        run: python ${{ DEPENDABOT_SCANNER_FILE }}
         env:
           WEBHOOK_URL: ${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}
           GITHUB_TOKEN: ${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}
@@ -53,7 +57,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Execute Python script
-        run: python .github/workflows/dependabot.py
+        run: python ${{ DEPENDABOT_SCANNER_FILE }}
         env:
           WEBHOOK_URL: ${{ secrets.DEPENDABOTTEST_SLACK_WEBHOOK }}
           GITHUB_TOKEN: ${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}
