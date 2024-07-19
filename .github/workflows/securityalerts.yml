@@ -10,6 +10,7 @@ on:
 env:
   PYTHON_VERSION: '3.10'
   DEPENDABOT_SCANNER_FILE: '.github/workflows/dependabot.py'
+  VULNERABILITY_COUNT: 2
   INSTALL_DEPENDENCIES: |
     python -m pip install --upgrade pip
     pip install requests
@@ -38,7 +39,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}
           REPO_OWNER: 'DevOps-ManiInspire'
           REPO_NAME: 'bot-test'
-          VULNERABILITY_COUNT: 2
+          VULNERABILITY_COUNT: ${{ env.VULNERABILITY_COUNT }}
           
   orgRepoRepo:
     runs-on: ubuntu-latest
@@ -61,7 +62,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DEPENDABOTTEST_GITHUB_TOKEN }}
           REPO_OWNER: 'DevOps-ManiInspire'
           REPO_NAME: 'repo'
-          VULNERABILITY_COUNT: 2
+          VULNERABILITY_COUNT: ${{ env.VULNERABILITY_COUNT }}
 
   # Define more jobs if needed, all with 'needs: setup'
 
