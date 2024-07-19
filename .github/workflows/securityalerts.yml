@@ -22,6 +22,9 @@ jobs:
           pip install requests
           pip install slack_sdk
           pip install pytz
+          hostname
+          touch new.txt
+          ls -lrt
 
   botTestRepo:
     runs-on: ubuntu-latest
@@ -29,6 +32,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          hostname
+          ls -lrt
         
       - name: Execute Python script
         run: python .github/workflows/dependabot.py
