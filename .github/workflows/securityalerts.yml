@@ -1,11 +1,9 @@
 name: Send Message to Slack
 
 on:
-  push:
-    branches:
-      - main  # Run on main branch push
-      - patch
-  workflow_dispatch:  # Allow manual triggering from GitHub UI
+  pull_request:
+  schedule:
+    - cron:  '30 18 * * 6'
 
 env:
   PYTHON_VERSION: '3.10'
